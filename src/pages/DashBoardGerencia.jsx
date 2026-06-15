@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState, Suspense, lazy } from "react"
-import { useFetchData } from "../hooks/useFetchData";
 import { useQuery } from "react-query";
 
 
