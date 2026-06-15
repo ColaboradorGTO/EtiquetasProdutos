@@ -29,7 +29,13 @@ export const ActionPesquisaProdutoEtiqueta = () => {
     return params.get('idFuncionario');
   });
 
+  const [idEmpresa] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('idEmpresa');
+  });
+
   console.log('ID do Funcionario:', idFuncionario);
+  console.log('ID da Empresa:', idEmpresa);
   const { data: dadosListaPrecos = [], error: errorListaPrecos, isLoading: isLoadingListaPrecos, refetch } = useQuery(
     'listas-de-precos-sap',
     async () => {
@@ -41,15 +47,15 @@ export const ActionPesquisaProdutoEtiqueta = () => {
   );
 
   useEffect(() => {
-    if (dadosListaPrecos && idFuncionario?.IDEMPRESA) {
+    if (dadosListaPrecos && idEmpresa?.IDEMPRESA) {
       const empresa = dadosListaPrecos.find(
-        item => item.listaPreco?.IDEMPRESA === idFuncionario?.IDEMPRESA
+        item => item.listaPreco?.IDEMPRESA === idEmpresa?.IDEMPRESA
       );
       if (empresa) {
         setEmpresaSelecionada(empresa.listaPreco?.IDRESUMOLISTAPRECO);
       }
     }
-  }, [dadosListaPrecos, idFuncionario]);
+  }, [dadosListaPrecos, idEmpresa]);
 
   const optionsListaPrecos = dadosListaPrecos
     .map((item) => item?.listaPreco)
