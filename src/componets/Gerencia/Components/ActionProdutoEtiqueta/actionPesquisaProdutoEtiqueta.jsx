@@ -24,6 +24,10 @@ export const ActionPesquisaProdutoEtiqueta = () => {
   const [dadosAcumuladorEtiquetas, setDadosAcumuladorEtiquetas] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [selectedIds, setSelectedIds] = useState([]);
+  const [idFuncionario] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('idFuncionario');
+  });
 
   const { data: dadosListaPrecos = [], error: errorListaPrecos, isLoading: isLoadingListaPrecos, refetch } = useQuery(
     'listas-de-precos-sap',
@@ -204,6 +208,8 @@ export const ActionPesquisaProdutoEtiqueta = () => {
         linkComponentAnterior={["Home"]}
         linkComponent={[""]}
         title="Etiquetagem"
+        subTitle={`ID Funcionario: ${idFuncionario}`}
+
 
         InputSelectEmpresaComponent={InputSelectAction}
         labelSelectEmpresa={"Lista de Preços"}
