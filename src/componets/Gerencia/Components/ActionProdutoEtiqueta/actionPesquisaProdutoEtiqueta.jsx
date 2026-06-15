@@ -224,7 +224,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
 
          InputFieldCodBarraComponent={InputField}
         labelInputFieldCodBarra={"Lista de Preços"}
-        valueInputFieldCodBarra={idFuncionario?.NOFANTASIA}
+        valueInputFieldCodBarra={nomeEmpresa || ''}
         isDisabledCodBarra={true}
 
         // InputSelectEmpresaComponent={InputSelectAction}
