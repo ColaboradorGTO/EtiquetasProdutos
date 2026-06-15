@@ -40,15 +40,15 @@ export const ActionPesquisaProdutoEtiqueta = () => {
   );
 
   useEffect(() => {
-    if (dadosListaPrecos && empresaSelecionada?.IDEMPRESA) {
+    if (dadosListaPrecos && idFuncionario?.IDEMPRESA) {
       const empresa = dadosListaPrecos.find(
-        item => item.listaPreco?.IDEMPRESA === empresaSelecionada.IDEMPRESA
+        item => item.listaPreco?.IDEMPRESA === idFuncionario?.IDEMPRESA
       );
       if (empresa) {
         setEmpresaSelecionada(empresa.listaPreco?.IDRESUMOLISTAPRECO);
       }
     }
-  }, [dadosListaPrecos, empresaSelecionada]);
+  }, [dadosListaPrecos, idFuncionario]);
 
   const optionsListaPrecos = dadosListaPrecos
     .map((item) => item?.listaPreco)
@@ -210,12 +210,16 @@ export const ActionPesquisaProdutoEtiqueta = () => {
         title="Etiquetagem"
         subTitle={`ID Funcionario: ${idFuncionario}`}
 
+         InputFieldCodBarraComponent={InputField}
+        labelInputFieldCodBarra={"Lista de Preços"}
+        valueInputFieldCodBarra={idFuncionario?.NOFANTASIA}
+        isDisabledCodBarra={true}
 
-        InputSelectEmpresaComponent={InputSelectAction}
-        labelSelectEmpresa={"Lista de Preços"}
-        optionsEmpresas={optionsListaPrecos}
-        valueSelectEmpresa={empresaSelecionada}
-        onChangeSelectEmpresa={(e) => setEmpresaSelecionada(e.value)}
+        // InputSelectEmpresaComponent={InputSelectAction}
+        // labelSelectEmpresa={"Lista de Preços"}
+        // optionsEmpresas={optionsListaPrecos}
+        // valueSelectEmpresa={empresaSelecionada}
+        // onChangeSelectEmpresa={(e) => setEmpresaSelecionada(e.value)}
         
         InputFieldComponent={InputField}
         labelInputField={"Cód.Barras "}
