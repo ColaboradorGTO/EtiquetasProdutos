@@ -29,6 +29,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
     return params.get('idFuncionario');
   });
 
+  console.log('ID do Funcionario:', idFuncionario);
   const { data: dadosListaPrecos = [], error: errorListaPrecos, isLoading: isLoadingListaPrecos, refetch } = useQuery(
     'listas-de-precos-sap',
     async () => {
