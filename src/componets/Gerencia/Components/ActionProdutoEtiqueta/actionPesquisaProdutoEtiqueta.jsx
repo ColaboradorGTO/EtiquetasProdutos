@@ -33,9 +33,14 @@ export const ActionPesquisaProdutoEtiqueta = () => {
     const params = new URLSearchParams(window.location.search);
     return params.get('idEmpresa');
   });
+  const [nomeEmpresa] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('noFantasia');
+  });
 
   console.log('ID do Funcionario:', idFuncionario);
   console.log('ID da Empresa:', idEmpresa);
+  console.log('Nome da Empresa:', nomeEmpresa);
   const { data: dadosListaPrecos = [], error: errorListaPrecos, isLoading: isLoadingListaPrecos, refetch } = useQuery(
     'listas-de-precos-sap',
     async () => {
