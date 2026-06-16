@@ -50,9 +50,9 @@ export const ActionPesquisaProdutoEtiqueta = () => {
   );
 
   useEffect(() => {
-    if (dadosListaPrecos && idEmpresa?.IDEMPRESA) {
+    if (dadosListaPrecos && idEmpresa) {
       const empresa = dadosListaPrecos.find(
-        item => item.listaPreco?.IDEMPRESA === idEmpresa?.IDEMPRESA
+        item => item.listaPreco?.IDEMPRESA === idEmpresa
       );
       if (empresa) {
         setEmpresaSelecionada(empresa.listaPreco?.IDRESUMOLISTAPRECO);
