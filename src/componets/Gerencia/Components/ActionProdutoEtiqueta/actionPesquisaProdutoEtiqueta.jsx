@@ -38,9 +38,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
     return params.get('noFantasia');
   });
 
-  console.log('ID do Funcionario:', idFuncionario);
-  console.log('ID da Empresa:', idEmpresa);
-  console.log('Nome da Empresa:', nomeEmpresa);
+
   const { data: dadosListaPrecos = [], error: errorListaPrecos, isLoading: isLoadingListaPrecos, refetch } = useQuery(
     'listas-de-precos-sap',
     async () => {
@@ -220,18 +218,13 @@ export const ActionPesquisaProdutoEtiqueta = () => {
         linkComponentAnterior={["Home"]}
         linkComponent={[""]}
         title="Etiquetagem"
-        subTitle={`ID Funcionario: ${idFuncionario}`}
+       
 
-         InputFieldCodBarraComponent={InputField}
+        InputFieldCodBarraComponent={InputField}
         labelInputFieldCodBarra={"Lista de Preços"}
         valueInputFieldCodBarra={nomeEmpresa || ''}
         isDisabledCodBarra={true}
 
-        // InputSelectEmpresaComponent={InputSelectAction}
-        // labelSelectEmpresa={"Lista de Preços"}
-        // optionsEmpresas={optionsListaPrecos}
-        // valueSelectEmpresa={empresaSelecionada}
-        // onChangeSelectEmpresa={(e) => setEmpresaSelecionada(e.value)}
         
         InputFieldComponent={InputField}
         labelInputField={"Cód.Barras "}
