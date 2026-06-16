@@ -38,7 +38,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
     return params.get('noFantasia');
   });
 
-
+  console.log(idEmpresa, 'idEmpresa');
   const { data: dadosListaPrecos = [], error: errorListaPrecos, isLoading: isLoadingListaPrecos, refetch } = useQuery(
     'listas-de-precos-sap',
     async () => {
@@ -56,17 +56,13 @@ export const ActionPesquisaProdutoEtiqueta = () => {
       );
       if (empresa) {
         setEmpresaSelecionada(empresa.listaPreco?.IDRESUMOLISTAPRECO);
+        console.log(empresa.listaPreco?.IDRESUMOLISTAPRECO, 'empresaSelecionada');
+        console.log(empresaSelecionada, 'empresaSelecionada');
       }
     }
   }, [dadosListaPrecos, idEmpresa]);
 
-  const optionsListaPrecos = dadosListaPrecos
-    .map((item) => item?.listaPreco)
-    .filter(Boolean)
-    .map((listaPreco) => ({
-      value: listaPreco.IDRESUMOLISTAPRECO,
-      label: listaPreco.NOMELISTA,
-    }));
+
 
   const fetchListaPrecosSap = async () => {
     const urlBase = `/lista-produtos-etiqueta-sap?idLista=${empresaSelecionada}&idProduto=${idProduto}&descricao=${descricaoProduto}&codBarras=${codBarrasProduto}`;
