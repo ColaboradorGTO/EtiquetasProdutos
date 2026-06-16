@@ -56,6 +56,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
       );
       if (empresa) {
         setEmpresaSelecionada(empresa.listaPreco?.IDRESUMOLISTAPRECO);
+        console.log(empresa, 'empresa');
         console.log(empresa.listaPreco?.IDRESUMOLISTAPRECO, 'empresaSelecionada');
         console.log(empresaSelecionada, 'empresaSelecionada');
       }
