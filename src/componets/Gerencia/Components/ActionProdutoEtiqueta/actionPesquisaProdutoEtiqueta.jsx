@@ -54,12 +54,9 @@ export const ActionPesquisaProdutoEtiqueta = () => {
       const empresa = dadosListaPrecos.find(
         item => String(item.listaPreco?.IDEMPRESA) === String(idEmpresa)
       );
-      console.log(empresa, 'empresa');
-      console.log(dadosListaPrecos, 'dadosListaPrecos');
+ 
       if (empresa) {
         setEmpresaSelecionada(String(empresa.listaPreco?.IDRESUMOLISTAPRECO ?? ''));
-        console.log(empresa.listaPreco?.IDRESUMOLISTAPRECO, 'empresaSelecionada');
-        console.log(empresaSelecionada, 'empresaSelecionada');
       }
     }
   }, [dadosListaPrecos, idEmpresa]);
