@@ -64,7 +64,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
   
   
   const fetchListaPrecosSap = async () => {
-    console.log(empresaSelecionada, 'empresaSelecionada lista sap');
+    
     const urlBase = `/lista-produtos-etiqueta-sap?idLista=${empresaSelecionada}&idProduto=${idProduto}&descricao=${descricaoProduto}&codBarras=${codBarrasProduto}`;
     let urlApi = urlBase.includes('?') ? urlBase : urlBase + '?';
     urlApi = urlApi.replace('&page=1', '').replace('page=1', '');
