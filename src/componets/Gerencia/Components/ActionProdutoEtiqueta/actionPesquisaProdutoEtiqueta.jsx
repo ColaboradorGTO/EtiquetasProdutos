@@ -207,6 +207,15 @@ export const ActionPesquisaProdutoEtiqueta = () => {
     }
   };
 
+    const optionsListaPrecos = dadosListaPrecos
+    .map((item) => item?.listaPreco)
+    .filter(Boolean)
+    .map((listaPreco) => ({
+      value: listaPreco.IDRESUMOLISTAPRECO,
+      label: listaPreco.NOMELISTA,
+    }));
+
+
   return (
 
     <Fragment>
@@ -214,7 +223,12 @@ export const ActionPesquisaProdutoEtiqueta = () => {
         linkComponentAnterior={["Home"]}
         linkComponent={[""]}
         title="Etiquetagem"
-       
+ 
+        // InputSelectEmpresaComponent={InputSelectAction}
+        // labelSelectEmpresa={"Lista de Preços"}
+        // optionsEmpresas={optionsListaPrecos}
+        // valueSelectEmpresa={empresaSelecionada}
+        // onChangeSelectEmpresa={(e) => setEmpresaSelecionada(e.value)}
 
         InputFieldCodBarraComponent={InputField}
         labelInputFieldCodBarra={"Lista de Preços"}
