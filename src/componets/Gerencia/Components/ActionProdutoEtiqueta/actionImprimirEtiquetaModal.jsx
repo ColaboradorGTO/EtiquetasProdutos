@@ -127,7 +127,7 @@ export const ActionImprimirEtiquetaModal = ({
         .replace(/\n+/g, '\n')  
         .trim();
 
-   
+    
       if (comandosZPLFinais.length < 10) {
         throw new Error('Comandos ZPL muito curtos - possível erro na geração');
       }
