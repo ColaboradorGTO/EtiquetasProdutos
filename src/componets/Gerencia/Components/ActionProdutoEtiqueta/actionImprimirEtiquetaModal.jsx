@@ -181,7 +181,7 @@ export const ActionImprimirEtiquetaModal = ({
 
   const etiquetasPorPagina = chunkArray(etiquetas, 3);
   const totalPaginas = etiquetasPorPagina.length;
-  console.log(totalPaginas, 'totalPaginas')
+
   return (
     <Fragment>
       <header className="row" style={{ justifyContent: "space-between" }}>
