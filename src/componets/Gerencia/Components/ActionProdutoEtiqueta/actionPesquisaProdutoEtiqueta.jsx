@@ -24,6 +24,7 @@ export const ActionPesquisaProdutoEtiqueta = () => {
   const [dadosAcumuladorEtiquetas, setDadosAcumuladorEtiquetas] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [selectedIds, setSelectedIds] = useState([]);
+  const [copia, setCopia] = useState(1);
   const [idFuncionario] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get('idFuncionario');
@@ -227,16 +228,16 @@ export const ActionPesquisaProdutoEtiqueta = () => {
         linkComponent={[""]}
         title="Etiquetagem"
  
-        // InputSelectEmpresaComponent={InputSelectAction}
-        // labelSelectEmpresa={"Lista de Preços"}
-        // optionsEmpresas={optionsListaPrecos}
-        // valueSelectEmpresa={empresaSelecionada}
-        // onChangeSelectEmpresa={(e) => setEmpresaSelecionada(e.value)}
+        InputSelectEmpresaComponent={InputSelectAction}
+        labelSelectEmpresa={"Lista de Preços"}
+        optionsEmpresas={optionsListaPrecos}
+        valueSelectEmpresa={empresaSelecionada}
+        onChangeSelectEmpresa={(e) => setEmpresaSelecionada(e.value)}
 
-        InputFieldCodBarraComponent={InputField}
-        labelInputFieldCodBarra={"Lista de Preços"}
-        valueInputFieldCodBarra={nomeEmpresa || ''}
-        isDisabledCodBarra={true}
+        // InputFieldCodBarraComponent={InputField}
+        // labelInputFieldCodBarra={"Lista de Preços"}
+        // valueInputFieldCodBarra={nomeEmpresa || ''}
+        // isDisabledCodBarra={true}
 
         
         InputFieldComponent={InputField}
@@ -303,6 +304,8 @@ export const ActionPesquisaProdutoEtiqueta = () => {
         setSelectAll={setSelectAll}
         selectedIds={selectedIds}
         setSelectedIds={setSelectedIds}
+        copia={copia}
+        setCopia={setCopia}
       />
     </Fragment>
   )

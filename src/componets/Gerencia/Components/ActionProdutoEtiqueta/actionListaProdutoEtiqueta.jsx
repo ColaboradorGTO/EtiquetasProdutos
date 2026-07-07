@@ -470,6 +470,7 @@ export const ActionListaProdutoEtiqueta = ({
         setProdutosSelecionados={setProdutosSelecionados}
         dadosAcumuladorEtiquetas={dadosAcumuladorEtiquetas}
         setDadosAcumuladorEtiquetas={setDadosAcumuladorEtiquetas}
+        copia={copia}
       />
 
     </Fragment>

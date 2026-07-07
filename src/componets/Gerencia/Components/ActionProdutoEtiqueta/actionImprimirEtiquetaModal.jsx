@@ -162,7 +162,7 @@ export const ActionImprimirEtiquetaModal = ({
         ? produtosSelecionados
         : [];
   const etiquetas = listaBase.flatMap((item) => {
-    const total = (item.quantidade || 1) * (1);
+    const total = (item.quantidade || 1) * (Number(copia) || 1);
 
     return Array.from({ length: total }, (_, index) => ({
       contador: index + 1,
@@ -181,7 +181,7 @@ export const ActionImprimirEtiquetaModal = ({
 
   const etiquetasPorPagina = chunkArray(etiquetas, 3);
   const totalPaginas = etiquetasPorPagina.length;
-
+  console.log(totalPaginas, 'totalPaginas')
   return (
     <Fragment>
       <header className="row" style={{ justifyContent: "space-between" }}>
