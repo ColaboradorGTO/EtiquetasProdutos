@@ -27,13 +27,14 @@ export const ActionImprimirEtiquetaModal = ({
     try {
       // Início da página ZPL
       let startPageLabel = `
-        ^XA
+         ^XA
+        ^MD10
         ^FWN
         ^PW850
         ^LL320
         ^CI28
-        ^BY2,3,55
       `;
+
       const zplResetConfiguracao = `
         ^XA
         ^MD10
@@ -160,7 +161,6 @@ export const ActionImprimirEtiquetaModal = ({
       : produtosSelecionados?.length
         ? produtosSelecionados
         : [];
-
   const etiquetas = listaBase.flatMap((item) => {
     const total = (item.quantidade || 1) * (1);
 

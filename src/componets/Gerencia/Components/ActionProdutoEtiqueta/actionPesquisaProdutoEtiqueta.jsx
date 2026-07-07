@@ -171,7 +171,10 @@ export const ActionPesquisaProdutoEtiqueta = () => {
             );
 
             if (indexExistente !== -1) {
-              listaAtualizada[indexExistente].quantidade += produto.quantidade;
+              listaAtualizada[indexExistente] = {
+                ...listaAtualizada[indexExistente],
+                quantidade: produto.quantidade,
+              };
             } else {
               listaAtualizada.push({
                 quantidade: produto.quantidade,
